@@ -5,6 +5,7 @@ import 'package:lojain_s_application2/screen/widgets/custom_outlined_button.dart
 import 'package:lojain_s_application2/theme/theme_helper.dart';
 import 'package:lojain_s_application2/theme/custom_button_style.dart';
 import 'package:lojain_s_application2/theme/custom_text_style.dart';
+import 'dart:math' as math; // Import the math library
 
 class ContractScreen extends StatelessWidget {
   const ContractScreen({Key? key})
@@ -17,7 +18,7 @@ class ContractScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: SizedBox(
-          //   width: SizeUtils.width,
+          width: double.maxFinite,
           child: SingleChildScrollView(
             child: Container(
               margin: EdgeInsets.only(bottom: 5),
@@ -47,105 +48,39 @@ class ContractScreen extends StatelessWidget {
                             child: Stack(
                               alignment: Alignment.centerLeft,
                               children: [
-                                Align(
-                                  alignment: Alignment.topLeft,
-                                  child: SizedBox(
-                                    width: 25,
-                                    child: Text(
-                                      "E",
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: theme.textTheme.headlineMedium,
-                                    ),
-                                  ),
-                                ),
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Container(
-                                    width: 25,
-                                    margin: EdgeInsets.only(left: 15),
-                                    child: Text(
-                                      "L",
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: theme.textTheme.headlineMedium,
-                                    ),
-                                  ),
-                                ),
-                                Align(
-                                  alignment: Alignment.bottomLeft,
-                                  child: Container(
-                                    width: 23,
-                                    margin: EdgeInsets.only(
-                                      left: 27,
-                                      bottom: 2,
-                                    ),
-                                    child: Text(
-                                      "Y",
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: theme.textTheme.headlineMedium,
-                                    ),
-                                  ),
-                                ),
-                                Align(
-                                  alignment: Alignment.bottomLeft,
-                                  child: Container(
-                                    width: 16,
-                                    margin: EdgeInsets.only(left: 44),
-                                    child: Text(
-                                      "S",
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: theme.textTheme.headlineMedium,
-                                    ),
-                                  ),
-                                ),
-                                Align(
-                                  alignment: Alignment.bottomRight,
-                                  child: Container(
-                                    width: 12,
-                                    margin: EdgeInsets.only(right: 43),
-                                    child: Text(
-                                      "I",
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: theme.textTheme.headlineMedium,
-                                    ),
-                                  ),
-                                ),
-                                Align(
-                                  alignment: Alignment.bottomRight,
-                                  child: Container(
-                                    width: 24,
-                                    margin: EdgeInsets.only(
-                                      right: 23,
-                                      bottom: 2,
-                                    ),
-                                    child: Text(
-                                      "U",
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: theme.textTheme.headlineMedium!
-                                          .copyWith(
-                                        fontFamily: "Inter",
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Align(
-                                  alignment: Alignment.topRight,
-                                  child: Container(
-                                    width: 32,
-                                    margin: EdgeInsets.only(top: 3),
-                                    child: Text(
-                                      "M",
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: theme.textTheme.headlineMedium,
-                                    ),
+                                Text(
+                                  'ELYASMN',
+                                  textDirection: TextDirection.ltr,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0xff141AB5),
+                                    fontFamily: 'Poppins',
+                                    fontStyle: FontStyle.italic,
                                   ),
                                 )
+                                // CircularText(
+                                //   radius: 170,
+                                //   children: [
+                                //     TextItem(
+                                //       text: Text(
+                                //         'mohamed',
+                                //         style: TextStyle(
+                                //           fontSize: 100,
+                                //           fontWeight: FontWeight.bold,
+                                //           color: Colors.blue,
+                                //         ),
+                                //       ),
+                                //       space: 30,
+                                //       startAngle: 90,
+                                //       startAngleAlignment:
+                                //           StartAngleAlignment.center,
+                                //       direction:
+                                //           CircularTextDirection.anticlockwise,
+                                //     ),
+                                //   ],
+                                // ),
+                                ,
                               ],
                             ),
                           ),
@@ -156,7 +91,7 @@ class ContractScreen extends StatelessWidget {
                   SizedBox(height: 21),
                   Text(
                     "New Painting for Sandy Hassan",
-                    style: theme.textTheme.bodyMedium,
+                    style: theme.textTheme.titleLarge,
                   ),
                   SizedBox(height: 10),
                   CustomOutlinedButton(
@@ -172,7 +107,9 @@ class ContractScreen extends StatelessWidget {
                       padding: EdgeInsets.only(left: 1),
                       child: Text(
                         "Description",
-                        style: theme.textTheme.bodyMedium,
+                        style: theme.textTheme.bodyLarge!.copyWith(
+                          color: Color(0xff3C416F),
+                        ),
                       ),
                     ),
                   ),
@@ -182,7 +119,9 @@ class ContractScreen extends StatelessWidget {
                       "I envision a piece that skillfully captures the essence of a landscape. The ideal artist should possess a keen eye for detail, a strong command of sketching technique.",
                       maxLines: 4,
                       overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.bodySmall,
+                      style: theme.textTheme.titleSmall!.copyWith(
+                        color: Color(0xff3C416F),
+                      ),
                     ),
                   ),
                   SizedBox(height: 13),
@@ -192,7 +131,9 @@ class ContractScreen extends StatelessWidget {
                       padding: EdgeInsets.only(left: 1),
                       child: Text(
                         "Requirements",
-                        style: theme.textTheme.bodyMedium,
+                        style: theme.textTheme.bodyLarge!.copyWith(
+                          color: Color(0xff3C416F),
+                        ),
                       ),
                     ),
                   ),
@@ -208,7 +149,9 @@ class ContractScreen extends StatelessWidget {
                           TextSpan(
                             text:
                                 "Paint an abstract painting.\nUse oil colors.\nuse a combination between ",
-                            style: theme.textTheme.bodySmall,
+                            style: theme.textTheme.titleSmall!.copyWith(
+                              color: Color(0xff3C416F),
+                            ),
                           ),
                           TextSpan(
                             text: "red",
@@ -232,7 +175,9 @@ class ContractScreen extends StatelessWidget {
                           ),
                           TextSpan(
                             text: ".\nDeliver it on ",
-                            style: theme.textTheme.bodySmall,
+                            style: theme.textTheme.titleSmall!.copyWith(
+                              color: Color(0xff3C416F),
+                            ),
                           ),
                           TextSpan(
                             text: "March 21, 2024",
@@ -240,7 +185,9 @@ class ContractScreen extends StatelessWidget {
                           ),
                           TextSpan(
                             text: ".\nSend me At-Least ",
-                            style: theme.textTheme.bodySmall,
+                            style: theme.textTheme.titleSmall!.copyWith(
+                              color: Color(0xff3C416F),
+                            ),
                           ),
                           TextSpan(
                             text: "3",
@@ -249,7 +196,9 @@ class ContractScreen extends StatelessWidget {
                           TextSpan(
                             text:
                                 " pictures while working on it.\nNew requirements will add another ",
-                            style: theme.textTheme.bodySmall,
+                            style: theme.textTheme.titleSmall!.copyWith(
+                              color: Color(0xff3C416F),
+                            ),
                           ),
                           TextSpan(
                             text: "50  to the base price.",
@@ -284,12 +233,16 @@ class ContractScreen extends StatelessWidget {
             children: [
               Text(
                 "Client Sign",
-                style: theme.textTheme.bodyMedium,
+                style: theme.textTheme.bodyLarge!.copyWith(
+                  color: Color(0xff3C416F),
+                ),
               ),
               SizedBox(height: 2),
               Text(
                 "Sandy Hassan",
-                style: CustomTextStyles.titleMediumBlueA200,
+                style: CustomTextStyles.titleMediumBlueA200.copyWith(
+                  fontSize: 18.0,
+                ),
               )
             ],
           ),
@@ -298,11 +251,15 @@ class ContractScreen extends StatelessWidget {
             children: [
               Text(
                 "Artist Sign",
-                style: theme.textTheme.bodyMedium,
+                style: theme.textTheme.bodyLarge!.copyWith(
+                  color: Color(0xff3C416F),
+                ),
               ),
               Text(
                 "Kareem Ehab",
-                style: CustomTextStyles.titleMediumBlueA200,
+                style: CustomTextStyles.titleMediumBlueA200.copyWith(
+                  fontSize: 18.0,
+                ),
               )
             ],
           )

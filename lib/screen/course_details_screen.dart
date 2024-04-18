@@ -32,7 +32,7 @@ class CourseDetailsScreen extends StatelessWidget {
               children: [
                 SizedBox(height: 50),
                 Padding(
-                  padding: EdgeInsets.only(left: 21),
+                  padding: EdgeInsets.only(left: 21, right: 10),
                   child: Row(
                     children: [
                       Container(
@@ -97,7 +97,9 @@ class CourseDetailsScreen extends StatelessWidget {
                             )
                           ],
                         ),
-                      )
+                      ),
+                      Spacer(),
+                      CustomAppBarButton(context)
                     ],
                   ),
                 ),
@@ -222,7 +224,6 @@ class CourseDetailsScreen extends StatelessWidget {
             ),
           ),
         ),
-        floatingActionButton: buildFloatingactionb(context),
       ),
     );
   }
@@ -336,15 +337,18 @@ class CourseDetailsScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget buildFloatingactionb(BuildContext context) {
-    return CustomFloatingButton(
-      height: 51,
-      width: 51,
-      backgroundColor: appTheme.indigo500,
-      child: CustomImageView(
-        imagePath: ImageConstant.imgCart,
-        height: 25.5,
-        width: 25.5,
+  Widget CustomAppBarButton(BuildContext context) {
+    return GestureDetector(
+      onTap: () {},
+      child: CustomAppbarButton(
+        height: 51,
+        width: 51,
+        backgroundColor: appTheme.indigo500,
+        child: CustomImageView(
+          imagePath: ImageConstant.imgCart,
+          height: 25.5,
+          width: 25.5,
+        ),
       ),
     );
   }

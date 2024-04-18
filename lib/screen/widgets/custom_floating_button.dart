@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lojain_s_application2/theme/theme_helper.dart';
 
-class CustomFloatingButton extends StatelessWidget {
-  CustomFloatingButton(
+class CustomAppbarButton extends StatelessWidget {
+  CustomAppbarButton(
       {Key? key,
       this.alignment,
       this.backgroundColor,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lojain_s_application2/screen/contract_screen.dart';
+import 'package:lojain_s_application2/screen/course_details_screen.dart';
 import 'package:lojain_s_application2/theme/theme_helper.dart';
 
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
