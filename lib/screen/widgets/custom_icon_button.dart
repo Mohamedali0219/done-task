@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lojain_s_application2/theme/theme_helper.dart';
+import 'package:lojain_s_application2/theme/font_text_style.dart';
 
 class CustomIconButton extends StatelessWidget {
   CustomIconButton(
@@ -52,7 +52,7 @@ class CustomIconButton extends StatelessWidget {
                   gradient: LinearGradient(
                     begin: Alignment(0.5, 0),
                     end: Alignment(0.5, 1),
-                    colors: [appTheme.indigo30021, appTheme.gray90021],
+                    colors: [AppColorsStyles.white, AppColorsStyles.gray],
                   ),
                 ),
             child: child,

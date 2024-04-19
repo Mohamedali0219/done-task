@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lojain_s_application2/image_constant.dart';
 import 'package:lojain_s_application2/theme/app_decoration.dart';
-import 'package:lojain_s_application2/theme/theme_helper.dart';
+import 'package:lojain_s_application2/theme/font_text_style.dart';
 import 'package:lojain_s_application2/screen/widgets/custom_image_view.dart';
 import 'package:outline_gradient_button/outline_gradient_button.dart';
 import 'widgets/custom_floating_button.dart';
@@ -22,7 +22,7 @@ class CourseDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: appTheme.gray50,
+        backgroundColor: AppColorsStyles.white,
         body: SizedBox(
           width: double.maxFinite,
           child: SingleChildScrollView(
@@ -88,12 +88,19 @@ class CourseDetailsScreen extends StatelessWidget {
                           children: [
                             Text(
                               "Yassmine Abbas",
-                              // style: CustomTextStyles.titleLargeSemiBold,
+                              style: FontTextStyle.fontStyle600.copyWith(
+                                color: AppColorsStyles.indigo500,
+                                fontSize: 20,
+                              ),
                             ),
                             SizedBox(height: 2),
                             Text(
                               "13 minuets ago",
-                              style: theme.textTheme.bodyLarge,
+                              style: FontTextStyle.fontStyle400.copyWith(
+                                color:
+                                    AppColorsStyles.indigo500.withOpacity(0.67),
+                                fontSize: 17,
+                              ),
                             )
                           ],
                         ),
@@ -139,10 +146,14 @@ class CourseDetailsScreen extends StatelessWidget {
                                       SizedBox(height: 4),
                                       Text(
                                         "Become Abstract Artist",
-                                        style: theme.textTheme.headlineMedium,
+                                        style:
+                                            FontTextStyle.fontStyle600.copyWith(
+                                          color: AppColorsStyles.indigo500,
+                                          fontSize: 26,
+                                        ),
                                       ),
                                       SizedBox(height: 35),
-                                      _buildRowRating(context),
+                                      buildRowRating(context),
                                       SizedBox(height: 34),
                                       Align(
                                         alignment: Alignment.centerLeft,
@@ -150,7 +161,11 @@ class CourseDetailsScreen extends StatelessWidget {
                                           padding: EdgeInsets.only(left: 19),
                                           child: Text(
                                             "description",
-                                            style: theme.textTheme.titleMedium,
+                                            style: FontTextStyle.fontStyle400
+                                                .copyWith(
+                                              color: AppColorsStyles.indigo500,
+                                              fontSize: 20,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -165,8 +180,15 @@ class CourseDetailsScreen extends StatelessWidget {
                                               TextSpan(
                                                 text:
                                                     "I’ve completed all the videos of my new course of how to be a professional abstract artist and you can now start your first session w... See more",
-                                                style:
-                                                    theme.textTheme.bodyMedium,
+                                                style: FontTextStyle
+                                                    .fontStyle400
+                                                    .copyWith(
+                                                        color: AppColorsStyles
+                                                            .indigo500
+                                                            .withOpacity(0.81),
+                                                        fontSize: 14,
+                                                        fontFamily: FontTextStyle
+                                                            .fontFamilyPoppins),
                                               ),
                                             ],
                                           ),
@@ -182,6 +204,9 @@ class CourseDetailsScreen extends StatelessWidget {
                               Align(
                                 alignment: Alignment.topCenter,
                                 child: OutlineGradientButton(
+                                  onTap: () {
+                                    //! video
+                                  },
                                   padding: EdgeInsets.only(
                                     left: 3,
                                     top: 3,
@@ -193,8 +218,8 @@ class CourseDetailsScreen extends StatelessWidget {
                                     begin: Alignment(0.5, -0.26),
                                     end: Alignment(0.5, 1.76),
                                     colors: [
-                                      appTheme.whiteA700,
-                                      appTheme.indigo300
+                                      AppColorsStyles.white,
+                                      AppColorsStyles.white
                                     ],
                                   ),
                                   corners: Corners(
@@ -228,7 +253,7 @@ class CourseDetailsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildRowRating(BuildContext context) {
+  Widget buildRowRating(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 21),
       child: Row(
@@ -241,7 +266,10 @@ class CourseDetailsScreen extends StatelessWidget {
               children: [
                 Text(
                   "Rating",
-                  style: theme.textTheme.labelLarge,
+                  style: FontTextStyle.fontStyle500.copyWith(
+                      color: AppColorsStyles.indigo500.withOpacity(0.55),
+                      fontSize: 13,
+                      fontFamily: FontTextStyle.fontFamilyInter),
                 ),
                 SizedBox(height: 2),
                 SizedBox(
@@ -252,13 +280,16 @@ class CourseDetailsScreen extends StatelessWidget {
                     children: [
                       Text(
                         "4.5/5",
-                        style: theme.textTheme.titleLarge,
+                        style: FontTextStyle.fontStyle500.copyWith(
+                            color: AppColorsStyles.indigo500,
+                            fontSize: 20,
+                            fontFamily: FontTextStyle.fontFamilyInter),
                       ),
                       CustomImageView(
                         imagePath: ImageConstant.imgSignal,
                         height: 17,
                         width: 18,
-                        margin: EdgeInsets.only(bottom: 5),
+                        margin: EdgeInsets.only(bottom: 5, top: 6),
                       )
                     ],
                   ),
@@ -278,12 +309,18 @@ class CourseDetailsScreen extends StatelessWidget {
             children: [
               Text(
                 "price",
-                style: theme.textTheme.titleSmall,
+                style: FontTextStyle.fontStyle500.copyWith(
+                    color: AppColorsStyles.indigo500.withOpacity(0.55),
+                    fontSize: 13,
+                    fontFamily: FontTextStyle.fontFamilyInter),
               ),
               SizedBox(height: 1),
               Text(
                 "1,750 \$",
-                style: theme.textTheme.headlineSmall,
+                style: FontTextStyle.fontStyle500.copyWith(
+                    color: AppColorsStyles.indigo500,
+                    fontSize: 20,
+                    fontFamily: FontTextStyle.fontFamilyInter),
               )
             ],
           ),
@@ -301,12 +338,18 @@ class CourseDetailsScreen extends StatelessWidget {
               children: [
                 Text(
                   "participates",
-                  style: theme.textTheme.labelLarge,
+                  style: FontTextStyle.fontStyle500.copyWith(
+                      color: AppColorsStyles.indigo500.withOpacity(0.55),
+                      fontSize: 13,
+                      fontFamily: FontTextStyle.fontFamilyInter),
                 ),
                 SizedBox(height: 2),
                 Text(
                   "310",
-                  style: theme.textTheme.titleLarge,
+                  style: FontTextStyle.fontStyle500.copyWith(
+                    color: AppColorsStyles.indigo500,
+                    fontSize: 20,
+                  ),
                 )
               ],
             ),
@@ -343,7 +386,7 @@ class CourseDetailsScreen extends StatelessWidget {
       child: CustomAppbarButton(
         height: 51,
         width: 51,
-        backgroundColor: appTheme.indigo500,
+        backgroundColor: AppColorsStyles.indigo500,
         child: CustomImageView(
           imagePath: ImageConstant.imgCart,
           height: 25.5,

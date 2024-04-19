@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:lojain_s_application2/theme/theme_helper.dart';
+import 'package:lojain_s_application2/theme/font_text_style.dart';
 
 class AppDecoration {
   static BoxDecoration get fillGray => BoxDecoration(
-        color: appTheme.gray50,
+        color: AppColorsStyles.white,
       );
   static BoxDecoration get fillIndigo => BoxDecoration(
-        color: appTheme.indigo500,
+        color: AppColorsStyles.indigo500,
       );
   static BoxDecoration get gradientBlueGrayToWhiteA => BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment(0.5, 0),
           end: Alignment(0.5, 1),
-          colors: [appTheme.blueGray100, appTheme.whiteA700],
+          colors: [AppColorsStyles.blue, AppColorsStyles.white],
         ),
       );
   static BoxDecoration get outlineBlack => BoxDecoration(
-        color: appTheme.whiteA700,
+        color: AppColorsStyles.white,
         border: Border.all(
-          color: appTheme.black90026,
+          color: AppColorsStyles.blue,
           width: 1,
         ),
       );
@@ -48,6 +48,6 @@ class BorderRadiusStyle {
       );
 
   static BoxDecoration get fillWhiteA => BoxDecoration(
-        color: appTheme.whiteA700,
+        color: AppColorsStyles.white,
       );
 }

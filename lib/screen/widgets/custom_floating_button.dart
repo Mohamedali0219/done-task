@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lojain_s_application2/theme/theme_helper.dart';
+import 'package:lojain_s_application2/theme/font_text_style.dart';
 
 class CustomAppbarButton extends StatelessWidget {
   CustomAppbarButton(
@@ -37,6 +37,9 @@ class CustomAppbarButton extends StatelessWidget {
   }
 
   Widget get fabWidget => FloatingActionButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(40),
+        ),
         backgroundColor: backgroundColor,
         onPressed: onTap,
         child: Container(
@@ -45,7 +48,7 @@ class CustomAppbarButton extends StatelessWidget {
           height: height ?? 0,
           decoration: decoration ??
               BoxDecoration(
-                color: appTheme.indigo500,
+                color: AppColorsStyles.indigo500,
                 borderRadius: BorderRadius.circular(25),
               ),
           child: child,

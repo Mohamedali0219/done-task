@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:lojain_s_application2/theme/theme_helper.dart';
+import 'package:lojain_s_application2/theme/font_text_style.dart';
 
 class CustomButtonStyles {
   static ButtonStyle get outlineGreen => OutlinedButton.styleFrom(
-        backgroundColor: appTheme.green700,
+        backgroundColor: AppColorsStyles.green,
         side: BorderSide(
-          color: appTheme.green700,
+          color: AppColorsStyles.green,
           width: 2,
         ),
         shape: RoundedRectangleBorder(
@@ -13,9 +13,9 @@ class CustomButtonStyles {
         ),
       );
   static ButtonStyle get outlineRed => OutlinedButton.styleFrom(
-        backgroundColor: appTheme.red600,
+        backgroundColor: AppColorsStyles.red,
         side: BorderSide(
-          color: appTheme.red600,
+          color: AppColorsStyles.red,
           width: 2,
         ),
         shape: RoundedRectangleBorder(

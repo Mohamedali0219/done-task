@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:lojain_s_application2/image_constant.dart';
 import 'package:lojain_s_application2/screen/widgets/custom_image_view.dart';
 import 'package:lojain_s_application2/screen/widgets/custom_outlined_button.dart';
-import 'package:lojain_s_application2/theme/theme_helper.dart';
 import 'package:lojain_s_application2/theme/custom_button_style.dart';
-import 'package:lojain_s_application2/theme/custom_text_style.dart';
-import 'dart:math' as math; // Import the math library
+import 'package:lojain_s_application2/theme/font_text_style.dart';
 
 class ContractScreen extends StatelessWidget {
   const ContractScreen({Key? key})
@@ -91,14 +89,20 @@ class ContractScreen extends StatelessWidget {
                   SizedBox(height: 21),
                   Text(
                     "New Painting for Sandy Hassan",
-                    style: theme.textTheme.titleLarge,
+                    style: FontTextStyle.fontStyle400.copyWith(
+                      color: AppColorsStyles.darkGray,
+                      fontSize: 21,
+                    ),
                   ),
                   SizedBox(height: 10),
                   CustomOutlinedButton(
-                    height: 47,
+                    height: 50,
                     width: 95,
-                    text: "800 ",
-                    buttonTextStyle: theme.textTheme.titleLarge!,
+                    text: "800\$",
+                    buttonTextStyle: FontTextStyle.fontStyle500.copyWith(
+                      color: AppColorsStyles.indigo500,
+                      fontSize: 18,
+                    ),
                   ),
                   SizedBox(height: 24),
                   Align(
@@ -107,21 +111,20 @@ class ContractScreen extends StatelessWidget {
                       padding: EdgeInsets.only(left: 1),
                       child: Text(
                         "Description",
-                        style: theme.textTheme.bodyLarge!.copyWith(
-                          color: Color(0xff3C416F),
+                        style: FontTextStyle.fontStyle400.copyWith(
+                          color: AppColorsStyles.darkGray,
+                          fontSize: 15,
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(
-                    width: 307,
-                    child: Text(
-                      "I envision a piece that skillfully captures the essence of a landscape. The ideal artist should possess a keen eye for detail, a strong command of sketching technique.",
-                      maxLines: 4,
-                      overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.titleSmall!.copyWith(
-                        color: Color(0xff3C416F),
-                      ),
+                  Text(
+                    "I envision a piece that skillfully captures the essence of a landscape. The ideal artist should possess a keen eye for detail, a strong command of sketching technique.",
+                    maxLines: 4,
+                    overflow: TextOverflow.ellipsis,
+                    style: FontTextStyle.fontStyle400.copyWith(
+                      color: AppColorsStyles.darkGray.withOpacity(0.83),
+                      fontSize: 15,
                     ),
                   ),
                   SizedBox(height: 13),
@@ -131,14 +134,14 @@ class ContractScreen extends StatelessWidget {
                       padding: EdgeInsets.only(left: 1),
                       child: Text(
                         "Requirements",
-                        style: theme.textTheme.bodyLarge!.copyWith(
-                          color: Color(0xff3C416F),
+                        style: FontTextStyle.fontStyle400.copyWith(
+                          color: AppColorsStyles.darkGray,
+                          fontSize: 15,
                         ),
                       ),
                     ),
                   ),
                   Container(
-                    width: 287,
                     margin: EdgeInsets.only(
                       left: 7,
                       right: 14,
@@ -149,60 +152,72 @@ class ContractScreen extends StatelessWidget {
                           TextSpan(
                             text:
                                 "Paint an abstract painting.\nUse oil colors.\nuse a combination between ",
-                            style: theme.textTheme.titleSmall!.copyWith(
-                              color: Color(0xff3C416F),
+                            style: FontTextStyle.fontStyle400.copyWith(
+                              color: AppColorsStyles.darkGray,
+                              fontSize: 15,
                             ),
                           ),
                           TextSpan(
                             text: "red",
-                            style: CustomTextStyles.labelLargeRed60001,
-                          ),
-                          TextSpan(
-                            text: ", ",
-                            style: theme.textTheme.bodySmall,
-                          ),
-                          TextSpan(
-                            text: "pink",
-                            style: CustomTextStyles.labelLargePinkA200,
-                          ),
-                          TextSpan(
-                            text: " & ",
-                            style: theme.textTheme.bodySmall,
-                          ),
-                          TextSpan(
-                            text: "orange",
-                            style: CustomTextStyles.labelLargeOrange400,
-                          ),
-                          TextSpan(
-                            text: ".\nDeliver it on ",
-                            style: theme.textTheme.titleSmall!.copyWith(
-                              color: Color(0xff3C416F),
+                            style: FontTextStyle.fontStyle400.copyWith(
+                              color: AppColorsStyles.red,
+                              fontSize: 15,
                             ),
                           ),
                           TextSpan(
+                            text: ", ",
+                            style: FontTextStyle.fontStyle400,
+                          ),
+                          TextSpan(
+                            text: "pink",
+                            style: FontTextStyle.fontStyle400.copyWith(
+                              color: AppColorsStyles.pink,
+                              fontSize: 15,
+                            ),
+                          ),
+                          TextSpan(
+                            text: " & ",
+                            style: FontTextStyle.fontStyle400,
+                          ),
+                          TextSpan(
+                            text: "orange",
+                            style: FontTextStyle.fontStyle400.copyWith(
+                              color: AppColorsStyles.orange,
+                              fontSize: 15,
+                            ),
+                          ),
+                          TextSpan(
+                            text: ".\nDeliver it on ",
+                            style: FontTextStyle.fontStyle400
+                                .copyWith(color: AppColorsStyles.blue),
+                          ),
+                          TextSpan(
                             text: "March 21, 2024",
-                            style: CustomTextStyles.labelLargeIndigoA700d3,
+                            style: FontTextStyle.fontStyle400
+                                .copyWith(color: AppColorsStyles.blue),
                           ),
                           TextSpan(
                             text: ".\nSend me At-Least ",
-                            style: theme.textTheme.titleSmall!.copyWith(
+                            style: FontTextStyle.fontStyle400.copyWith(
                               color: Color(0xff3C416F),
                             ),
                           ),
                           TextSpan(
                             text: "3",
-                            style: CustomTextStyles.labelLargeIndigoA400,
+                            style: FontTextStyle.fontStyle400.copyWith(
+                              color: Color(0xff3C416F),
+                            ),
                           ),
                           TextSpan(
                             text:
                                 " pictures while working on it.\nNew requirements will add another ",
-                            style: theme.textTheme.titleSmall!.copyWith(
+                            style: FontTextStyle.fontStyle400.copyWith(
                               color: Color(0xff3C416F),
                             ),
                           ),
                           TextSpan(
                             text: "50  to the base price.",
-                            style: theme.textTheme.labelLarge,
+                            style: FontTextStyle.fontStyle400.copyWith(),
                           )
                         ],
                       ),
@@ -233,16 +248,15 @@ class ContractScreen extends StatelessWidget {
             children: [
               Text(
                 "Client Sign",
-                style: theme.textTheme.bodyLarge!.copyWith(
-                  color: Color(0xff3C416F),
+                style: FontTextStyle.fontStyle400.copyWith(
+                  color: AppColorsStyles.darkGray,
+                  fontSize: 15,
                 ),
               ),
               SizedBox(height: 2),
               Text(
                 "Sandy Hassan",
-                style: CustomTextStyles.titleMediumBlueA200.copyWith(
-                  fontSize: 18.0,
-                ),
+                style: FontTextStyle.fontStyle700,
               )
             ],
           ),
@@ -251,15 +265,14 @@ class ContractScreen extends StatelessWidget {
             children: [
               Text(
                 "Artist Sign",
-                style: theme.textTheme.bodyLarge!.copyWith(
-                  color: Color(0xff3C416F),
+                style: FontTextStyle.fontStyle400.copyWith(
+                  color: AppColorsStyles.darkGray,
+                  fontSize: 15,
                 ),
               ),
               Text(
                 "Kareem Ehab",
-                style: CustomTextStyles.titleMediumBlueA200.copyWith(
-                  fontSize: 18.0,
-                ),
+                style: FontTextStyle.fontStyle700,
               )
             ],
           )
@@ -277,20 +290,19 @@ class ContractScreen extends StatelessWidget {
         children: [
           Expanded(
             child: CustomOutlinedButton(
-              text: "Reject",
-              margin: EdgeInsets.only(right: 4),
-              buttonStyle: CustomButtonStyles.outlineRed,
-              buttonTextStyle:
-                  theme.textTheme.titleMedium!.copyWith(color: Colors.white),
-            ),
+                text: "Reject",
+                margin: EdgeInsets.only(right: 4),
+                buttonStyle: CustomButtonStyles.outlineRed,
+                buttonTextStyle: FontTextStyle.fontStyle500
+                    .copyWith(color: AppColorsStyles.white, fontSize: 17)),
           ),
           Expanded(
             child: CustomOutlinedButton(
               text: "Accept",
               margin: EdgeInsets.only(left: 4),
               buttonStyle: CustomButtonStyles.outlineGreen,
-              buttonTextStyle:
-                  theme.textTheme.titleMedium!.copyWith(color: Colors.white),
+              buttonTextStyle: FontTextStyle.fontStyle500
+                  .copyWith(color: AppColorsStyles.white, fontSize: 17),
             ),
           )
         ],

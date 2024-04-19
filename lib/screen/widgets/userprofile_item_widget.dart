@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lojain_s_application2/image_constant.dart';
 import 'package:lojain_s_application2/theme/app_decoration.dart';
 import 'package:lojain_s_application2/screen/widgets/custom_image_view.dart';
-import 'package:lojain_s_application2/theme/theme_helper.dart';
+import 'package:lojain_s_application2/theme/font_text_style.dart';
 
 class UserprofileItemWidget extends StatelessWidget {
   UserprofileItemWidget({Key? key})
@@ -39,7 +39,10 @@ class UserprofileItemWidget extends StatelessWidget {
             children: [
               Text(
                 '4',
-                style: theme.textTheme.bodyLarge,
+                style: FontTextStyle.fontStyle500.copyWith(
+                    color: AppColorsStyles.indigo500,
+                    fontSize: 18,
+                    fontFamily: FontTextStyle.fontFamilyInter),
               ),
               CustomImageView(
                 imagePath: ImageConstant.imgSignal,
