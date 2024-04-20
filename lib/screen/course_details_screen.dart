@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lojain_s_application2/image_constant.dart';
 import 'package:lojain_s_application2/theme/app_decoration.dart';
 import 'package:lojain_s_application2/theme/font_text_style.dart';
@@ -201,43 +202,7 @@ class CourseDetailsScreen extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              Align(
-                                alignment: Alignment.topCenter,
-                                child: OutlineGradientButton(
-                                  onTap: () {
-                                    //! video
-                                  },
-                                  padding: EdgeInsets.only(
-                                    left: 3,
-                                    top: 3,
-                                    right: 3,
-                                    bottom: 3,
-                                  ),
-                                  strokeWidth: 3,
-                                  gradient: LinearGradient(
-                                    begin: Alignment(0.5, -0.26),
-                                    end: Alignment(0.5, 1.76),
-                                    colors: [
-                                      AppColorsStyles.white,
-                                      AppColorsStyles.white
-                                    ],
-                                  ),
-                                  corners: Corners(
-                                    topLeft: Radius.circular(46),
-                                    topRight: Radius.circular(46),
-                                    bottomLeft: Radius.circular(46),
-                                    bottomRight: Radius.circular(46),
-                                  ),
-                                  child: CustomIconButton(
-                                    height: 92,
-                                    width: 92,
-                                    padding: EdgeInsets.all(25),
-                                    child: CustomImageView(
-                                      imagePath: ImageConstant.imgRectangle1143,
-                                    ),
-                                  ),
-                                ),
-                              )
+                              CustomPlayButton()
                             ],
                           ),
                         ),
@@ -393,6 +358,35 @@ class CourseDetailsScreen extends StatelessWidget {
           width: 25.5,
         ),
       ),
+    );
+  }
+}
+
+class CustomPlayButton extends StatelessWidget {
+  const CustomPlayButton({Key? key, this.onTap}) : super(key: key);
+  final void Function()? onTap;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+          height: 92.42,
+          width: 92.42,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(colors: [
+              Color(0xff8580BE).withOpacity(0.33),
+              Color(0xff1C1B21).withOpacity(0.33),
+            ]),
+            borderRadius: BorderRadius.circular(50),
+            border: Border.all(
+              color: AppColorsStyles.white,
+            ),
+          ),
+          child: SizedBox(
+            width: 32,
+            height: 38,
+            child: Image.asset(ImageConstant.imgRectangle1143),
+          )),
     );
   }
 }

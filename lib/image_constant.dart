@@ -18,7 +18,7 @@ class ImageConstant {
 
   static String imgProfilePicture3 = '$imagePath/img_profile_picture_3.png';
 
-  static String imgRectangle1143 = '$imagePath/img_rectangle_1143.svg';
+  static String imgRectangle1143 = '$imagePath/Rectangle 1143.png';
 
   static String imgCart = '$imagePath/img_cart.svg';
 
